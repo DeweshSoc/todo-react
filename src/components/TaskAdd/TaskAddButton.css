@@ -1,0 +1,22 @@
+.add-task-btn{
+    background-color: #00ADB5;
+    color: #393E46;
+    font-weight: 700;
+    font-family: "Montserrat";
+    font-size: 3rem;
+    display: inline-block;
+    position: sticky;
+    padding: 2rem;
+    bottom: 50px;
+    right: 50px;
+    margin-left: calc(100vw - 8rem);
+    border-radius: 50%;
+}
+
+.add-task-btn > span{
+    position: absolute;
+    right: 16px;
+    top: 4px;
+    user-select: none;
+    cursor: pointer;
+}
