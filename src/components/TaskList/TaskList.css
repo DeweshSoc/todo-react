@@ -21,8 +21,8 @@
 
 .task-list > ul > li:hover{
     cursor: pointer;
-    animation: task-hover 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform: scale(1.025);
+    /* animation: task-hover 1s cubic-bezier(0.075, 0.82, 0.165, 1); */
+    /* transform: scale(1.025); */
 }
 
 .task-list > ul > li:active {
@@ -37,15 +37,14 @@
 }
 
 
-@keyframes task-hover {
+/* @keyframes task-hover {
     from { 
         transform: scale(1);
-        /* font-size: 1.1rem; */
     }
     to { 
         transform: scale(1.025);
     }
-}
+} */
 
 @keyframes task-click {
     from { 
@@ -53,7 +52,7 @@
         /* font-size: 1.1rem; */
     }
     to { 
-        transform: scale(1.025);
+        transform: scale(0.98);
 
     }
 }

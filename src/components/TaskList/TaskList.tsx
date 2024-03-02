@@ -4,6 +4,7 @@ import "./TaskList.css";
 
 import Task from "./Task";
 import ShimmerTaskList from "../Shimmer/ShimmerTaskList";
+import TaskFilter from "./TaskFilter";
 
 interface ITodo {
   completed: boolean;
@@ -14,30 +15,45 @@ interface ITodo {
 
 const TaskList = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
+  const [originalTodos, setOriginalTodods] = useState<ITodo[]>([]);
 
+  console.log("rendering tasklist")
   useEffect(() => {
     console.log("use effect");
     getData();
   }, []);
 
+  const filterTaskList = (keyword: string) => {
+    const filteredList = originalTodos.filter(task=>task.todo.toLowerCase().includes(keyword.toLowerCase()))
+    setTodos(todos=>{
+      if(!filteredList.length) return [];
+      return filteredList;
+    });
+  };
+
   const getData = async () => {
     const jsonData = await fetch("https://dummyjson.com/todos");
     let response = await jsonData.json();
     setTodos(response?.todos);
-    console.log(todos);
+    setOriginalTodods(response?.todos);
   };
 
-  return todos.length === 0 ? (
+  return originalTodos.length === 0 ? (
     <ShimmerTaskList />
   ) : (
-    <div className="task-list">
-      <ul>
-        {todos.map((task) => {
-          return <Task key={task.id}>{task.todo}</Task>;
-        })}
-      </ul>
-    </div>
+    <>
+      <TaskFilter filterListHandler={filterTaskList}></TaskFilter>
+      <div className="task-list">
+        <ul>
+          {todos.map((task) => {
+            return <Task key={task.id}>{task.todo}</Task>;
+          })}
+        </ul>
+      </div>
+    </>
   );
 };
+
+
 
 export default TaskList;
