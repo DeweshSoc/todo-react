@@ -14,3 +14,13 @@
   font-family: "Montserrat";
   font-size: 3rem;
 }
+
+.task-input{
+  padding: 1rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-family: "Roboto";
+  font-size: 1rem;
+  
+}

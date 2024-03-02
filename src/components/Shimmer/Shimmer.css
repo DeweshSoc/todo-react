@@ -31,46 +31,6 @@
     animation: shimmer 1s infinite linear;
 }
 
-.shimmer-task-list>ul>li:hover {
-    cursor: pointer;
-    animation: task-hover 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform: scale(1.025);
-}
-
-.shimmer-task-list>ul>li:active {
-    animation: task-click 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    user-select: none;
-}
-
-.shimmer-task-list>ul>.done {
-    background-color: #393E46;
-    color: #EEEEEE;
-    text-decoration: line-through;
-}
-
-
-@keyframes task-hover {
-    from {
-        transform: scale(1);
-        /* font-size: 1.1rem; */
-    }
-
-    to {
-        transform: scale(1.025);
-    }
-}
-
-@keyframes task-click {
-    from {
-        transform: scale(1);
-        /* font-size: 1.1rem; */
-    }
-
-    to {
-        transform: scale(1.025);
-
-    }
-}
 
 @keyframes shimmer {
     to {
