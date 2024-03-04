@@ -13,7 +13,7 @@ interface ITodo {
   todo: string;
 }
 
-const TaskList = () => {
+export const TaskList = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
   const [originalTodos, setOriginalTodods] = useState<ITodo[]>([]);
 
@@ -46,7 +46,7 @@ const TaskList = () => {
       <div className="task-list">
         <ul>
           {todos.map((task) => {
-            return <Task key={task.id}>{task.todo}</Task>;
+            return <Task taskKey={task.id} key={task.id}>{task.todo}</Task>;
           })}
         </ul>
       </div>

@@ -1,7 +1,7 @@
 import "./TaskAddButton.css"
 
 
-function AddTaskBtn(){
+export function AddTaskBtn(){
     return (
         <div className="add-task-btn">
             <span>+</span>
