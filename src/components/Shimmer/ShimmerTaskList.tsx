@@ -1,6 +1,6 @@
 import "./Shimmer.css"
 
-const ShimmerTaskList = () => {
+export const ShimmerTaskList = () => {
   return (
     <>
       <div className="shimmer-task-list">
