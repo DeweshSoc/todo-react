@@ -42,11 +42,16 @@ export const TaskList = () => {
     <ShimmerTaskList />
   ) : (
     <>
+      <h1 className="header">ToDew : A simple todo list app</h1>
       <TaskFilter filterListHandler={filterTaskList}></TaskFilter>
       <div className="task-list">
         <ul>
           {todos.map((task) => {
-            return <Task taskKey={task.id} key={task.id}>{task.todo}</Task>;
+            return (
+              <Task taskKey={task.id} key={task.id}>
+                {task.todo}
+              </Task>
+            );
           })}
         </ul>
       </div>

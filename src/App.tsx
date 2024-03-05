@@ -18,7 +18,6 @@ export function App() {
         </ul>
       </nav>
       <div className="app">
-        <h1 className="header">ToDew : A simple todo list app</h1>
         <Outlet />
       </div>
     </>
