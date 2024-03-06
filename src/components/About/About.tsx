@@ -1,3 +1,7 @@
+import User from "./User";
+import UserClass from "./UserClass";
+
+
 export const About = () => {
   return (
     <>
@@ -7,6 +11,8 @@ export const About = () => {
         tenetur ipsa incidunt ab soluta omnis veritatis? Mollitia veniam aliquid
         magni totam omnis laboriosam voluptates ab ad expedita numquam. Ex.
       </p>
+      <User name="Dewesh Jha" location="Jamshedpur"/>
+      <UserClass name="Dewesh Jha" location="Jamshedpur"/>
     </>
   );
 };
