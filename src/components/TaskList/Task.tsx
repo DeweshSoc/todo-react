@@ -1,24 +1,30 @@
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import { useState } from "react";
+// import React from "react";
 
-interface ITaskOption{
-  pageX?:number,
-  pageY?:number,
-  show:boolean,
-  options?:Array<{id:number,text:string, link:string}>
+interface ITask {
+  children: React.ReactNode;
+  taskKey: number;
 }
 
-function Task({ children, taskKey }: { children: React.ReactNode, taskKey:number}) {
+interface ITaskOption {
+  pageX?: number;
+  pageY?: number;
+  show: boolean;
+  options?: Array<{ id: number; text: string; link: string }>;
+}
+
+const Task: React.FC<ITask> = ({ children, taskKey }) => {
   const [isDone, setIsDone] = useState(false);
   const [optionData, setOptionData] = useState<ITaskOption>({
-    show:false,
-    options:[
+    show: false,
+    options: [
       {
-        id:1,
-        text:'View Task',
-        link:'/task/'+taskKey
-      }
-    ]
+        id: 1,
+        text: "View Task",
+        link: "/task/" + taskKey,
+      },
+    ],
   });
 
   function markDone() {
@@ -32,14 +38,14 @@ function Task({ children, taskKey }: { children: React.ReactNode, taskKey:number
   }
 
   function openOptions(x: number, y: number) {
-      setOptionData(option => {
-        return {
-          ...option,
-          pageX : x,
-          pageY : y,
-          show: true
-        }
-      })
+    setOptionData((option) => {
+      return {
+        ...option,
+        pageX: x,
+        pageY: y,
+        show: true,
+      };
+    });
   }
 
   function handleClicks(ev: React.MouseEvent) {
@@ -57,7 +63,7 @@ function Task({ children, taskKey }: { children: React.ReactNode, taskKey:number
     <>
       <div
         className={optionData.show ? "context-menu" : "context-menu-hide"}
-        style={{ left: optionData.pageX, top: optionData.pageY   }}
+        style={{ left: optionData.pageX, top: optionData.pageY }}
       >
         <ul>
           {optionData.options?.map((option) => (
@@ -77,6 +83,6 @@ function Task({ children, taskKey }: { children: React.ReactNode, taskKey:number
       </li>
     </>
   );
-}
+};
 
 export default Task;
