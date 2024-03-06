@@ -1,7 +1,12 @@
 import { useState } from "react";
 import "./TaskFilter.css";
 
-export const TaskFilter = ({ filterListHandler }: { filterListHandler: Function }) => {
+interface ITaskFilter {
+  filterListHandler : Function
+}
+
+
+export const TaskFilter : React.FC<ITaskFilter> = ({ filterListHandler }) => {
   const [usertaskInput, setUserTaskInput] = useState("");
 
   return (
