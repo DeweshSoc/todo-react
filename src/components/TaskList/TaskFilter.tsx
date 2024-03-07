@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./TaskFilter.css";
 
 interface ITaskFilter {
   filterListHandler : Function
@@ -10,7 +9,7 @@ export const TaskFilter : React.FC<ITaskFilter> = ({ filterListHandler }) => {
   const [usertaskInput, setUserTaskInput] = useState("");
 
   return (
-    <div className="task-add-section">
+    <div className="mt-6 mx-0 mb-0">
       <input
         className="task-input"
         type="text"
@@ -22,7 +21,7 @@ export const TaskFilter : React.FC<ITaskFilter> = ({ filterListHandler }) => {
         }}
       />
       <button
-        className="task-add-button"
+        className="p-4 border-none h-[51px] rounded-md ml-4 bg-primary text-primary-text text-base"
         onClick={filterListHandler.bind(this, usertaskInput)}
       >
         Filter

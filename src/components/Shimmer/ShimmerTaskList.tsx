@@ -1,4 +1,4 @@
-import "./Shimmer.css"
+
 
 export const ShimmerTaskList = () => {
   return (
