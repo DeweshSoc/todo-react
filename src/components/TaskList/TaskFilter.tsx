@@ -11,7 +11,7 @@ export const TaskFilter : React.FC<ITaskFilter> = ({ filterListHandler }) => {
   return (
     <div className="mt-6 mx-0 mb-0">
       <input
-        className="task-input"
+        className="p-4 rounded-md outline-none border-none font-roboto text-base text-primary-text"
         type="text"
         name="task-input"
         id="task-input"

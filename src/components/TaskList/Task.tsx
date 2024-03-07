@@ -62,12 +62,12 @@ const Task: React.FC<ITask> = ({ children, taskKey }) => {
   return (
     <>
       <div
-        className={optionData.show ? "context-menu" : "context-menu-hide"}
+        className={optionData.show ? "inline-block bg-[#ccc] p-4 rounded-md absolute" : "hidden"}
         style={{ left: optionData.pageX, top: optionData.pageY }}
       >
-        <ul>
+        <ul className="list-none">
           {optionData.options?.map((option) => (
-            <Link key={option.id} to={option.link}>
+            <Link className="no-underline text-black" key={option.id} to={option.link}>
               <li>{option.text}</li>
             </Link>
           ))}
@@ -77,7 +77,11 @@ const Task: React.FC<ITask> = ({ children, taskKey }) => {
       <li
         onClick={handleClicks}
         onContextMenu={handleClicks}
-        className={isDone ? "done" : ""}
+        className={
+          isDone
+            ? "bg-primary-text text-[#eeeeee] line-through hover:cursor-pointer active:animate-task-click active:select-none p-4 m-4 rounded-md"
+            : "bg-primary rounded-md text-primary-text font-roboto text-base p-4 m-4 hover:cursor-pointer active:animate-task-click active:select-none"
+        }
       >
         {children}
       </li>

@@ -1,4 +1,4 @@
-import "./TaskList.css";
+
 // import {default as data} from "../../data.json"
 
 import Task from "./Task";
@@ -26,10 +26,10 @@ export const TaskList = () => {
     <ShimmerTaskList />
   ) : (
     <>
-      <h1 className="header">ToDew : A simple todo list app</h1>
+      <h1 className="font-montserrat text-5xl">ToDew : A simple todo list app</h1>
       <TaskFilter filterListHandler={filterTaskList}></TaskFilter>
-      <div className="task-list">
-        <ul>
+      <div className="mt-12">
+        <ul className="list-none max-w-[510px] my-4 mx-auto w-full">
           {todos.map((task) => {
             return (
               <Task taskKey={task.id} key={task.id}>
