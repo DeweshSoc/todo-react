@@ -1,0 +1,80 @@
+[
+  {
+    "title": "Recommended",
+    "data": [
+      {
+        "title": "Kolkata",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo debitis sunt, accusantium ab natus necessitatibus, numquam repellendus.",
+        "imageUrl": "https://picsum.photos/300/200",
+        "id": 1,
+        "isPromoted": false
+      },
+      {
+        "title": "Bengal",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo debitis sunt, accusantium ab natus necessitatibus, numquam repellendus.",
+        "imageUrl": "https://picsum.photos/300/200",
+        "id": 2,
+        "isPromoted": true
+      },
+      {
+        "title": "Singapore",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo debitis sunt, accusantium ab natus necessitatibus, numquam repellendus.",
+        "imageUrl": "https://picsum.photos/300/200",
+        "id": 3,
+        "isPromoted": false
+      }
+    ]
+  },
+  {
+    "title": "Kolkata Delight",
+    "data": [
+      {
+        "title": "Kolkata",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo debitis sunt, accusantium ab natus necessitatibus, numquam repellendus.",
+        "imageUrl": "https://picsum.photos/300/200",
+        "id": 1,
+        "isPromoted": false
+      },
+      {
+        "title": "Bengal",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo debitis sunt, accusantium ab natus necessitatibus, numquam repellendus.",
+        "imageUrl": "https://picsum.photos/300/200",
+        "id": 2,
+        "isPromoted": true
+      },
+      {
+        "title": "Singapore",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo debitis sunt, accusantium ab natus necessitatibus, numquam repellendus.",
+        "imageUrl": "https://picsum.photos/300/200",
+        "id": 3,
+        "isPromoted": false
+      }
+    ]
+  },
+  {
+    "title": "JSR layout 2",
+    "data": [
+      {
+        "title": "Kolkata",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo debitis sunt, accusantium ab natus necessitatibus, numquam repellendus.",
+        "imageUrl": "https://picsum.photos/300/200",
+        "id": 1,
+        "isPromoted": false
+      },
+      {
+        "title": "Bengal",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo debitis sunt, accusantium ab natus necessitatibus, numquam repellendus.",
+        "imageUrl": "https://picsum.photos/300/200",
+        "id": 2,
+        "isPromoted": true
+      },
+      {
+        "title": "Singapore",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo debitis sunt, accusantium ab natus necessitatibus, numquam repellendus.",
+        "imageUrl": "https://picsum.photos/300/200",
+        "id": 3,
+        "isPromoted": false
+      }
+    ]
+  }
+]

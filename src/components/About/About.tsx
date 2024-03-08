@@ -2,35 +2,12 @@
 // import UserClass from "./UserClass";
 
 import Accordian from "../Accordian";
-
-const data = [
-  {
-    title:'Kolkata',
-    description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo debitis sunt, accusantium ab natus necessitatibus, numquam repellendus.",
-    imageUrl: "https://picsum.photos/300/200",
-    id:1,
-    isPromoted:false
-  },
-  {
-    title:'Bengal',
-    description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo debitis sunt, accusantium ab natus necessitatibus, numquam repellendus.",
-    imageUrl: "https://picsum.photos/300/200",
-    id:2,
-    isPromoted:true
-  },
-  {
-    title:'Singapore',
-    description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo debitis sunt, accusantium ab natus necessitatibus, numquam repellendus.",
-    imageUrl: "https://picsum.photos/300/200",
-    id:3,
-    isPromoted:false
-  },
-];
+import accordians from "../../json/accordianData.json";
+import { useState } from "react";
 
 export const About = () => {
+  const [showAccordianIndex, setShowAccordianIndex] = useState<number>(-1);
+
   return (
     <>
       <h1 className="font-montserrat text-5xl">About Us</h1>
@@ -41,9 +18,21 @@ export const About = () => {
       </p>
       {/* <User name="Dewesh Jha" location="Jamshedpur" />
       <UserClass name="Dewesh Jha" location="Jamshedpur" /> */}
-      <Accordian title="Recommended" data={data}/>
-      <Accordian title="Recommended" data={data}/>
-      <Accordian title="Recommended" data={data}/>
+
+      {accordians.map((accordianData, index) => {
+        return (
+          <Accordian
+            key={index}
+            title={accordianData.title}
+            data={accordianData.data}
+            isOpen={showAccordianIndex === index}
+            onOpen={() => {
+              if(showAccordianIndex === index) return setShowAccordianIndex(-1);
+              setShowAccordianIndex(index);
+            }}
+          />
+        );
+      })}
     </>
   );
 };

@@ -4,27 +4,38 @@ import AccordianBody,{IAccordianData} from "./AccordianBody";
 
 
 
-interface IAccordian{
-    title:string,
-    data?:Array<IAccordianData>
+interface IAccordian {
+  title: string;
+  isOpen: boolean;
+  onOpen: Function;
+  data?: Array<IAccordianData>;
 }
 
 
 
-export const Accordian: React.FC<IAccordian> = ({title, data}) => {
+export const Accordian: React.FC<IAccordian> = ({
+  title,
+  isOpen,
+  data,
+  onOpen,
+}) => {
   const [addedClasses, setAddedClasses] = useState("");
-  const [showItems, setShowItems] = useState(false);
-
+  // const [showItems, setShowItems] = useState(false);
 
   const handleClick = (ev: React.MouseEvent) => {
     setAddedClasses((addedClasses) => (addedClasses ? "" : "rotate-180"));
-    setShowItems(showItems=>!showItems);
+    onOpen();
   };
 
   return (
     <div className="my-4">
-      <div className={`flex justify-between shadow-md bg-primary text-primary-text p-4 rounded-md text-lg cursor-pointer`}onClick={handleClick}>
-        <span>{title}({data?.length})</span>
+      <div
+        className={`flex justify-between shadow-md bg-primary text-primary-text p-4 rounded-md text-lg cursor-pointer`}
+        onClick={handleClick}
+      >
+        <span>
+          {title}({data?.length})
+        </span>
         <span>
           <img
             className={`max-w-8 duration-500 ${addedClasses}`}
@@ -33,7 +44,7 @@ export const Accordian: React.FC<IAccordian> = ({title, data}) => {
           />
         </span>
       </div>
-      {showItems && <AccordianBody data={data} />}
+      {isOpen && <AccordianBody data={data} />}
     </div>
   );
 };
