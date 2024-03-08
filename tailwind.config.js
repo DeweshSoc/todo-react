@@ -12,7 +12,9 @@ module.exports = {
         montserrat: "Montserrat",
       },
       animation:{
-        'task-click':'task-click 1s cubic-bezier(0.075, 0.82, 0.165, 1)'
+        'task-click':'task-click 1s cubic-bezier(0.075, 0.82, 0.165, 1)',
+        'accordian-open':'rotate180 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite',
+        // 'second':'1s'
       },
       keyframes:{
         'shimmer': {
@@ -26,6 +28,11 @@ module.exports = {
           },
           'to':{
             'transform':'scale(0.98)'
+          }
+        },
+        'rotate180':{
+          'to':{
+            'transform':'rotate(180deg)'
           }
         }
       }
