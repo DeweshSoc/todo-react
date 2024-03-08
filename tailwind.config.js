@@ -17,11 +17,6 @@ module.exports = {
         // 'second':'1s'
       },
       keyframes:{
-        'shimmer': {
-          'to': {
-              'background-position-x': '0%'
-          }
-        },
         'task-click':{
           'from':{
             'transform':'scale(1)'
