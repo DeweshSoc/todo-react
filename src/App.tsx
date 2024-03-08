@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, Outlet, Link } from "react-router-dom";
 
 
-import { TaskList, AddTaskBtn, About, Error, Task } from "./components";
+import { TaskList, AddTaskBtn, About, Error, Task, Context } from "./components";
 
 export function App() {
   return (
@@ -14,6 +14,9 @@ export function App() {
           </li>
           <li>
             <Link to="/about"> About </Link>
+          </li>
+          <li>
+            <Link to="/context"> Context </Link>
           </li>
         </ul>
       </nav>
@@ -40,6 +43,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "about",
         element: <About></About>,
+      },
+      {
+        path: "context",
+        element: <Context></Context>,
       },
     ],
     errorElement: <Error />,
